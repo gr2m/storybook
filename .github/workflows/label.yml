@@ -1,14 +1,14 @@
-on: label
+"on": label
 name: Dangerfile JS Label
 jobs:
   dangerJS:
     name: Danger JS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Danger JS
         uses: danger/danger-js@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --dangerfile .ci/danger/dangerfile.ts
+          args: "--dangerfile .ci/danger/dangerfile.ts"
